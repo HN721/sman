@@ -20,7 +20,13 @@ const io = socketio(server, {
   },
 });
 //middlewares
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://whatsapp-six-pink.vercel.app"],
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 //connect to db
 mongoose
