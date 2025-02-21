@@ -12,13 +12,7 @@ dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server, {
-  cors: {
-    origin: ["http://localhost:5173", "https://whatsapp-six-pink.vercel.app"],
-    methods: ["GET", "POST"],
-    credentials: true,
-  },
-});
+const io = socketio(server);
 //middlewares
 app.use(
   cors({
