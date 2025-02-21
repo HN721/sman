@@ -16,9 +16,8 @@ const io = socketio(server);
 //middlewares
 app.use(
   cors({
-    origin: "https://whatsapp-six-pink.vercel.app",
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    origin: "*",
+    methods: ["GET", "POST"],
     credentials: true,
   })
 );
